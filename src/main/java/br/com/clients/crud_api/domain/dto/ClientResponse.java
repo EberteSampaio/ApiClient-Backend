@@ -1,5 +1,5 @@
-package br.com.clients.crud_api.model.dto;
-import br.com.clients.crud_api.model.Client;
+package br.com.clients.crud_api.domain.dto;
+import br.com.clients.crud_api.domain.model.Client;
 
 public record ClientResponse(
         Long id,

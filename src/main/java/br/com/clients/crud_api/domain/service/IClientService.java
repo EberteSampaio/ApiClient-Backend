@@ -1,7 +1,7 @@
-package br.com.clients.crud_api.service;
+package br.com.clients.crud_api.domain.service;
 
-import br.com.clients.crud_api.model.dto.ClientRequest;
-import br.com.clients.crud_api.model.dto.ClientResponse;
+import br.com.clients.crud_api.domain.dto.ClientRequest;
+import br.com.clients.crud_api.domain.dto.ClientResponse;
 import java.util.stream.Stream;
 
 public interface IClientService {

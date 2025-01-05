@@ -1,10 +1,10 @@
-package br.com.clients.crud_api.service.implementation;
+package br.com.clients.crud_api.domain.service.implementation;
 
-import br.com.clients.crud_api.model.Client;
-import br.com.clients.crud_api.model.dto.ClientRequest;
-import br.com.clients.crud_api.model.dto.ClientResponse;
-import br.com.clients.crud_api.repository.ClientRepository;
-import br.com.clients.crud_api.service.IClientService;
+import br.com.clients.crud_api.domain.model.Client;
+import br.com.clients.crud_api.domain.dto.ClientRequest;
+import br.com.clients.crud_api.domain.dto.ClientResponse;
+import br.com.clients.crud_api.domain.repository.ClientRepository;
+import br.com.clients.crud_api.domain.service.IClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.stream.Stream;

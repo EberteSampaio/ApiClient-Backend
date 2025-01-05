@@ -1,4 +1,4 @@
-package br.com.clients.crud_api.model.dto;
+package br.com.clients.crud_api.domain.dto;
 
 public record ClientRequest(
 

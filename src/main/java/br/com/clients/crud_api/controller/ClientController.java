@@ -1,8 +1,8 @@
 package br.com.clients.crud_api.controller;
 
-import br.com.clients.crud_api.model.dto.ClientRequest;
-import br.com.clients.crud_api.model.dto.ClientResponse;
-import br.com.clients.crud_api.service.IClientService;
+import br.com.clients.crud_api.domain.dto.ClientRequest;
+import br.com.clients.crud_api.domain.dto.ClientResponse;
+import br.com.clients.crud_api.domain.service.IClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

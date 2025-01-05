@@ -1,6 +1,6 @@
-package br.com.clients.crud_api.model;
+package br.com.clients.crud_api.domain.model;
 
-import br.com.clients.crud_api.model.dto.ClientRequest;
+import br.com.clients.crud_api.domain.dto.ClientRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -43,5 +43,50 @@ public class Client {
         if(clientRequest.companySector() != null){
             this.setCompanySector(clientRequest.companySector());
         }
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Client setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public Client setCompanyName(String companyName) {
+        this.companyName = companyName;
+        return this;
+    }
+
+    public String getIdentificationNumber() {
+        return identificationNumber;
+    }
+
+    public Client setIdentificationNumber(String identificationNumber) {
+        this.identificationNumber = identificationNumber;
+        return this;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Client setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public String getCompanySector() {
+        return companySector;
+    }
+
+    public Client setCompanySector(String companySector) {
+        this.companySector = companySector;
+        return this;
     }
 }

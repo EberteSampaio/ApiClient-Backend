@@ -1,7 +1,7 @@
-package br.com.clients.crud_api.repository;
+package br.com.clients.crud_api.domain.repository;
 
 
-import br.com.clients.crud_api.model.Client;
+import br.com.clients.crud_api.domain.model.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
