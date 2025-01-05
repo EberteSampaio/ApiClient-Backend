@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 @RestController
@@ -27,6 +28,7 @@ public class ClientController {
     @ResponseStatus(HttpStatus.CREATED)
     @Transactional
     public ClientResponse create(@RequestBody ClientRequest clientRequest){
+
         return this.service.save(clientRequest);
     }
 
@@ -37,10 +39,10 @@ public class ClientController {
         return this.service.edit(id, clientRequest);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping
     @Transactional
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") Long id){
+    public void delete(@RequestBody List<Long> id){
         this.service.delete(id);
     }
 

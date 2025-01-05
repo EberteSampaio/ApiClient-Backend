@@ -7,6 +7,8 @@ import br.com.clients.crud_api.domain.repository.ClientRepository;
 import br.com.clients.crud_api.domain.service.IClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.stream.Stream;
 
 @Service
@@ -35,8 +37,8 @@ public class ClientService implements IClientService {
     }
 
     @Override
-    public void delete(Long id) {
-        this.repository.deleteById(id);
+    public void delete(List<Long> id) {
+        this.repository.deleteAllById(id);
     }
 
     @Override
