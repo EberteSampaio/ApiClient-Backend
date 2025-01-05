@@ -3,7 +3,7 @@ package br.com.clients.crud_api.controller;
 import br.com.clients.crud_api.domain.dto.ClientRequest;
 import br.com.clients.crud_api.domain.dto.ClientResponse;
 import br.com.clients.crud_api.domain.service.IClientService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,13 +11,12 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/client")
-@RequiredArgsConstructor
 public class ClientController {
-
+    @Autowired
     private IClientService service;
 
     @GetMapping
-    @ResponseStatus(HttpStatus.FOUND)
+    @ResponseStatus(HttpStatus.OK)
     public Stream<ClientResponse> all(){
         return this.service.all();
     }
@@ -28,7 +27,8 @@ public class ClientController {
         return this.service.save(clientRequest);
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public ClientResponse edit( @PathVariable Long id, @RequestBody ClientRequest clientRequest){
         return this.service.edit(id, clientRequest);
     }
@@ -38,4 +38,11 @@ public class ClientController {
     public void delete(@PathVariable Long id){
         this.service.delete(id);
     }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public ClientResponse findById(@PathVariable Long id){
+        return this.service.findById(id);
+    }
+
 }

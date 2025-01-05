@@ -2,26 +2,30 @@ package br.com.clients.crud_api.domain.model;
 
 import br.com.clients.crud_api.domain.dto.ClientRequest;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity(name = "Client")
 @Table(name = "tb_clients")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Client {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String companyName;
     private String identificationNumber;
     private String email;
     private String companySector;
+
+    public Client(Long id, String companyName, String identificationNumber, String email, String companySector) {
+        this.id = id;
+        this.companyName = companyName;
+        this.identificationNumber = identificationNumber;
+        this.email = email;
+        this.companySector = companySector;
+    }
+
+    public Client(){
+
+    }
 
     public Client(ClientRequest clientRequest){
         this.companyName = clientRequest.companyName();

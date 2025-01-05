@@ -9,4 +9,6 @@ public interface IClientService {
     ClientResponse save(ClientRequest client);
     ClientResponse edit(Long id, ClientRequest clientRequest);
     void delete(Long id);
+
+    ClientResponse findById(Long id);
 }
